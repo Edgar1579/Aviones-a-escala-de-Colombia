@@ -1,10 +1,11 @@
 /* Estilos para el header */
 header {
-    padding: 20px 0;
+    padding: 10px 0;
   }
   
   .navbar-brand {
-    font-size: 30px;  
+    font-size: 30px; 
+     
   }
   
   /* Estilos para el carrusel */
@@ -72,3 +73,4 @@ header {
   .whatsapp i {
     color: #25D366;
   }
+   

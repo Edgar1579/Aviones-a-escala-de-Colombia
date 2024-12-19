@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS -->
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 0 0 8px 8px;
+            text-align: center;
+        }
+
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .modal-content {
+            text-align: center;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; margin: 20px;">Galería de Fotos</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="imagenes/av2.png" alt="Foto 1" onclick="openModal(this.src, 'Descripción de Foto 1', '$10')">
+            <div class="description">Descripción de Foto 1<br>Precio: $10</div>
+        </div>
+        <div class="gallery-item">
+            <img src="imagenes/av3.png" alt="Foto 2" onclick="openModal(this.src, 'Descripción de Foto 2', '$15')">
+            <div class="description">Descripción de Foto 2<br>Precio: $15</div>
+        </div>
+        <div class="gallery-item">
+            <img src="imagenes/av5.png" alt="Foto 3" onclick="openModal(this.src, 'Descripción de Foto 3', '$20')">
+            <div class="description">Descripción de Foto 3<br>Precio: $20</div>
+        </div>
+        <div class="gallery-item">
+            <img src="imagenes/av6.png" alt="Foto 4" onclick="openModal(this.src, 'Descripción de Foto 4', '$25')">
+            <div class="description">Descripción de Foto 4<br>Precio: $25</div>
+        </div>
+        <div class="gallery-item">
+            <img src="imagenes/k-fir.jpeg" alt="Foto 5" onclick="openModal(this.src, 'Descripción de Foto 5', '$30')">
+            <div class="description">Descripción de Foto 5<br>Precio: $30</div>
+        </div>
+        <div class="gallery-item">
+            <img src="imagenes/avianca.jpeg" alt="Foto 6" onclick="openModal(this.src, 'Descripción de Foto 6', '$35')">
+            <div class
